@@ -307,13 +307,15 @@ module.exports = function PgOrderRelatedColumnsPlugin(
               attr,
               true,
               foreignTable,
-              inflectionKeyAttributes
+              inflectionKeyAttributes,
+              isForward
             );
             const descEnumName = inflection.orderByRelatedColumnEnum(
               attr,
               false,
               foreignTable,
-              inflectionKeyAttributes
+              inflectionKeyAttributes,
+              isForward
             );
 
             const sqlSubselect = ({ queryBuilder }) => sql.fragment`(
